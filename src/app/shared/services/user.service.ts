@@ -8,7 +8,7 @@ import { User } from '../models/user.model';
 })
 export class UserService {
 
-  URL_USERS = 'http://localhost:3000/users';
+  URL_USERS = 'http://localhost:8080/users';
 
   httpOptions = {
     headers: new HttpHeaders({

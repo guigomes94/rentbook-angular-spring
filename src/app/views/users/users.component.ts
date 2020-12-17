@@ -14,6 +14,8 @@ export class UsersComponent implements OnInit {
   users: User[];
   user: User;
 
+  imgPath = '../../../assets/emptyAvatar.jpg';
+
   constructor(
     private userService: UserService,
     public dialog: MatDialog,

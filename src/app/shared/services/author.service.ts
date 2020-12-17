@@ -8,7 +8,7 @@ import { Author } from '../models/author.model';
 })
 export class AuthorService {
 
-  URL_AUTHORS = 'http://localhost:3000/authors';
+  URL_AUTHORS = 'http://localhost:8080/authors';
 
   httpOptions = {
     headers: new HttpHeaders({

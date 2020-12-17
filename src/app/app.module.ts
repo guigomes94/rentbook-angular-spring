@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
@@ -26,8 +27,17 @@ import { BooksComponent } from './views/books/books.component';
 import { AuthorsComponent } from './views/authors/authors.component';
 import { RentsComponent } from './views/rents/rents.component';
 import { ReservationsComponent } from './views/reservations/reservations.component';
-import { ReportsComponent } from './views/reports/reports.component';
 import { AuthorFormDialogComponent } from './views/authors/author-form-dialog/author-form-dialog.component';
+import { TelefoneMaskPipe } from './shared/pipes/telefone-mask.pipe';
+import { MoneyFormatPipe } from './shared/pipes/money-format.pipe';
+import { ReservationFormDialogComponent } from './views/reservations/reservation-form-dialog/reservation-form-dialog.component';
+import { RentFormDialogComponent } from './views/rents/rent-form-dialog/rent-form-dialog.component';
+import { BookFormDialogComponent } from './views/books/book-form-dialog/book-form-dialog.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatChipsModule } from '@angular/material/chips';
+import { DateFormatPipe } from './shared/pipes/date-format.pipe';
 
 
 @NgModule({
@@ -38,11 +48,16 @@ import { AuthorFormDialogComponent } from './views/authors/author-form-dialog/au
     UserFormDialogComponent,
     NavbarComponent,
     BooksComponent,
+    BookFormDialogComponent,
     RentsComponent,
+    RentFormDialogComponent,
     ReservationsComponent,
-    ReportsComponent,
+    ReservationFormDialogComponent,
     AuthorsComponent,
-    AuthorFormDialogComponent
+    AuthorFormDialogComponent,
+    TelefoneMaskPipe,
+    MoneyFormatPipe,
+    DateFormatPipe
   ],
   imports: [
     HttpClientModule,
@@ -60,7 +75,12 @@ import { AuthorFormDialogComponent } from './views/authors/author-form-dialog/au
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatChipsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
