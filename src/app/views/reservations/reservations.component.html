@@ -32,11 +32,11 @@
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
       <mat-cell *matCellDef="let item">
-        <button mat-icon-button (click)="edit(item)">
+        <button mat-icon-button (click)="edit(item)" matTooltip="Editar reserva">
           <mat-icon>edit</mat-icon>
         </button>
         <button mat-icon-button >
-          <mat-icon (click)="remove(item)">delete</mat-icon>
+          <mat-icon (click)="remove(item)" matTooltip="Cancelar reserva">delete</mat-icon>
         </button>
       </mat-cell>
     </ng-container>

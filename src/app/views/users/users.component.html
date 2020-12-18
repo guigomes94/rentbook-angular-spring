@@ -9,8 +9,8 @@
         <mat-card-title *ngIf="user.phone !== null">{{ user.phone | telefoneMask }}</mat-card-title>
         <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
         <mat-card-actions>
-          <button mat-icon-button (click)="edit(user)"><mat-icon>edit</mat-icon></button>
-          <button mat-icon-button (click)="remove(user)"><mat-icon>delete</mat-icon></button>
+          <button mat-icon-button (click)="edit(user)" matTooltip="Editar usuário"><mat-icon>edit</mat-icon></button>
+          <button disabled mat-icon-button (click)="remove(user)" matTooltip="Operação não permitida"><mat-icon>delete</mat-icon></button>
         </mat-card-actions>
     </mat-card>
   </ng-container>

@@ -6,6 +6,7 @@ import { Book } from 'src/app/shared/models/book.model';
 import { Rent } from 'src/app/shared/models/rent.model';
 import { User } from 'src/app/shared/models/user.model';
 import { BookService } from 'src/app/shared/services/book.service';
+import { MessagesService } from 'src/app/shared/services/messages.service';
 import { RentService } from 'src/app/shared/services/rent-service.service';
 import { UserService } from 'src/app/shared/services/user.service';
 
@@ -24,6 +25,7 @@ export class RentFormDialogComponent implements OnInit {
   public rentForm: FormGroup;
 
   constructor(
+    private messagesService: MessagesService,
     private fb: FormBuilder,
     private rentService: RentService,
     private bookService: BookService,
@@ -84,6 +86,7 @@ export class RentFormDialogComponent implements OnInit {
     } else {
       this.rentService.add(rent).subscribe(res => {
         this.dialogRef.close(res);
+        this.messagesService.success('Empréstimo realizado com sucesso!')
       });
     }
 

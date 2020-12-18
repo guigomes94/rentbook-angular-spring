@@ -36,10 +36,10 @@
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
       <mat-cell *matCellDef="let item">
-        <button mat-icon-button (click)="edit(item)">
+        <button mat-icon-button (click)="edit(item)" matTooltip="Editar livro">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button >
+        <button disabled mat-icon-button >
           <mat-icon (click)="remove(item)">delete</mat-icon>
         </button>
       </mat-cell>

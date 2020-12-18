@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
@@ -38,6 +39,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatChipsModule } from '@angular/material/chips';
 import { DateFormatPipe } from './shared/pipes/date-format.pipe';
+import { InterceptorModule } from './interceptor/interceptor.module';
 
 
 @NgModule({
@@ -80,7 +82,14 @@ import { DateFormatPipe } from './shared/pipes/date-format.pipe';
     MatDatepickerModule,
     MatNativeDateModule,
     MatChipsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      progressBar: true,
+      preventDuplicates: true
+    }),
+    InterceptorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
