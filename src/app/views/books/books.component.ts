@@ -26,6 +26,10 @@ export class BooksComponent implements OnInit {
     this.listAll();
   }
 
+  filter(texto: string): void {
+    this.dataSource.filter = texto.trim().toLowerCase();
+  }
+
   listAll() {
     this.bookService.listAll().subscribe( data => {
         this.dataSource = new MatTableDataSource(data);
@@ -38,7 +42,12 @@ export class BooksComponent implements OnInit {
       data: {}
     });
 
-    dialogRef.afterClosed().subscribe();
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.dataSource.data.push(result);
+        this.dataSource = new MatTableDataSource(this.dataSource.data);
+      }
+    });
   }
 
   edit(Book: Book): void {
@@ -49,7 +58,15 @@ export class BooksComponent implements OnInit {
       }
     });
 
-    dialogRef.afterClosed().subscribe();
+    dialogRef.afterClosed().subscribe(
+      res => {
+        if (res) {
+          const indiceAEditar = this.dataSource.data.findIndex(obj => obj.id === res.id);
+          this.dataSource.data[indiceAEditar] = res
+          this.dataSource = new MatTableDataSource(this.dataSource.data);
+        }
+      }
+    );
   }
 
   remove(Book: Book): void {

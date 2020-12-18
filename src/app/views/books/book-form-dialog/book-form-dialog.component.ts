@@ -59,6 +59,8 @@ export class BookFormDialogComponent implements OnInit {
   createOrUpdateBook(){
     const book = this.bookForm.value;
 
+    console.log(book)
+
     if (book.available === 'true') {
       book.available = true;
     } else {

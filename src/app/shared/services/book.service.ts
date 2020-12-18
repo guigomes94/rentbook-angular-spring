@@ -37,7 +37,7 @@ export class BookService {
   }
 
   update(book: Book): Observable<Book> {
-    return this.httpClient.put<Book>(`${this.URL_BOOKS}/${book.id}`, Book, this.httpOptions);
+    return this.httpClient.put<Book>(`${this.URL_BOOKS}/${book.id}`, book, this.httpOptions);
   }
 
   remove(id: number): Observable<object> {

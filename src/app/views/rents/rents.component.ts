@@ -27,6 +27,10 @@ export class RentsComponent implements OnInit {
     this.listAll();
   }
 
+  filter(texto: string): void {
+    this.dataSource.filter = texto.trim().toLowerCase();
+  }
+
   listAll() {
     this.rentService.listAll().subscribe( data => {
         this.dataSource = new MatTableDataSource(data);
@@ -59,7 +63,8 @@ export class RentsComponent implements OnInit {
 
     this.rentService.update(rent).subscribe(res => {
       if (res) {
-        this.dataSource.data.push(res);
+        const indiceAEditar = this.dataSource.data.findIndex(obj => obj.id === res.id);
+        this.dataSource.data[indiceAEditar] = res
         this.dataSource = new MatTableDataSource(this.dataSource.data);
       }
     })

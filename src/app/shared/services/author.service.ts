@@ -28,12 +28,12 @@ export class AuthorService {
     return this.httpClient.get<Author>(`${this.URL_AUTHORS}/${id}`);
   }
 
-  add(Author: Author): Observable<Author> {
-    return this.httpClient.post<Author>(this.URL_AUTHORS, Author, this.httpOptions);
+  add(author: Author): Observable<Author> {
+    return this.httpClient.post<Author>(this.URL_AUTHORS, author, this.httpOptions);
   }
 
-  update(Author: Author): Observable<Author> {
-    return this.httpClient.put<Author>(`${this.URL_AUTHORS}/${Author.id}`, Author, this.httpOptions);
+  update(author: Author): Observable<Author> {
+    return this.httpClient.put<Author>(`${this.URL_AUTHORS}/${author.id}`, author, this.httpOptions);
   }
 
   remove(id: number): Observable<object> {

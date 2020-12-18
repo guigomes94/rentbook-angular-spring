@@ -13,7 +13,7 @@
     <mat-form-field>
       <mat-label>Autor</mat-label>
       <mat-select formControlName="author" name="author">
-        <mat-option *ngFor="let a of authors" [value]="a.name">
+        <mat-option *ngFor="let a of authors" [value]="a">
           {{ a.name }}
         </mat-option>
       </mat-select>

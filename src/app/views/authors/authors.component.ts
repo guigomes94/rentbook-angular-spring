@@ -26,6 +26,10 @@ export class AuthorsComponent implements OnInit {
     this.getAllAuthors();
   }
 
+  filter(texto: string): void {
+    this.dataSource.filter = texto.trim().toLowerCase();
+  }
+
   addAuthor(): void {
     const dialogRef = this.dialog.open(AuthorFormDialogComponent, {
       minWidth: '600px',

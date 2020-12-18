@@ -32,13 +32,22 @@ export class ReservationsComponent implements OnInit {
       });
   }
 
+  filter(texto: string): void {
+    this.dataSource.filter = texto.trim().toLowerCase();
+  }
+
   addReservation(): void {
     const dialogRef = this.dialog.open(ReservationFormDialogComponent, {
       minWidth: '450px',
       data: {}
     });
 
-    dialogRef.afterClosed().subscribe();
+    dialogRef.afterClosed().subscribe(res => {
+      if (res) {
+        this.dataSource.data.push(res);
+        this.dataSource = new MatTableDataSource(this.dataSource.data);
+      }
+    });
   }
 
   edit(reservation: Reservation): void {
@@ -49,11 +58,26 @@ export class ReservationsComponent implements OnInit {
       }
     });
 
-    dialogRef.afterClosed().subscribe();
+    dialogRef.afterClosed().subscribe(
+      res => {
+        if (res) {
+          const indiceAEditar = this.dataSource.data.findIndex(obj => obj.id === res.id);
+          this.dataSource.data[indiceAEditar] = res
+          this.dataSource = new MatTableDataSource(this.dataSource.data);
+        }
+      }
+    );
   }
 
   remove(reservation: Reservation): void {
-    this.reservationService.remove(reservation.id).subscribe();
+    this.reservationService.remove(reservation.id).subscribe(
+      res => {
+        const indiceARemover = this.reservations.findIndex(u => u.id === reservation.id);
+        if (indiceARemover > -1) {
+          this.reservations.splice(indiceARemover, 1);
+        }
+      }
+    );
   }
 
 }

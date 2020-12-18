@@ -33,7 +33,7 @@ export class ReservationService {
   }
 
   update(reservation: Reservation): Observable<Reservation> {
-    return this.httpClient.put<Reservation>(`${this.URL_RESERVATIONS}/${reservation.id}`, Reservation, this.httpOptions);
+    return this.httpClient.put<Reservation>(`${this.URL_RESERVATIONS}/${reservation.id}`, reservation, this.httpOptions);
   }
 
   remove(id: number): Observable<object> {

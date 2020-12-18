@@ -9,7 +9,7 @@
       <mat-label>Usuário</mat-label>
       <mat-select formControlName="user" name="user">
         <mat-option *ngFor="let u of users" [value]="u">
-          {{ u.name }}
+          {{ u.name | titlecase }}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -18,7 +18,7 @@
       <mat-label>Título</mat-label>
       <mat-select formControlName="book" name="book">
         <mat-option *ngFor="let b of books" [value]="b">
-          {{ b.title }}
+          {{ b.title | titlecase }}
         </mat-option>
       </mat-select>
     </mat-form-field>
