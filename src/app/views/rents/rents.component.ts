@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import * as moment from 'moment';
-import { Rent } from 'src/app/shared/models/rent.model';
-import { RentService } from 'src/app/shared/services/rent-service.service';
+import { Rent } from '../../shared/models/rent.model';
+import { RentService } from '../../shared/services/rent-service.service';
 import { RentFormDialogComponent } from './rent-form-dialog/rent-form-dialog.component';
 
 @Component({

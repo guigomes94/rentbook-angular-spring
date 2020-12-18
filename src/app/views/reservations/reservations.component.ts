@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { Reservation } from 'src/app/shared/models/reservation.model';
-import { ReservationService } from 'src/app/shared/services/reservation-service.service';
+import { Reservation } from '../../shared/models/reservation.model';
+import { ReservationService } from '../../shared/services/reservation-service.service';
 import { ReservationFormDialogComponent } from './reservation-form-dialog/reservation-form-dialog.component';
 
 @Component({

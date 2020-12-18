@@ -2,13 +2,13 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import * as moment from 'moment';
-import { Book } from 'src/app/shared/models/book.model';
-import { Rent } from 'src/app/shared/models/rent.model';
-import { User } from 'src/app/shared/models/user.model';
-import { BookService } from 'src/app/shared/services/book.service';
-import { MessagesService } from 'src/app/shared/services/messages.service';
-import { RentService } from 'src/app/shared/services/rent-service.service';
-import { UserService } from 'src/app/shared/services/user.service';
+import { Book } from '../../../shared/models/book.model';
+import { Rent } from '../../../shared/models/rent.model';
+import { User } from '../../../shared/models/user.model';
+import { BookService } from '../../../shared/services/book.service';
+import { MessagesService } from '../../../shared/services/messages.service';
+import { RentService } from '../../../shared/services/rent-service.service';
+import { UserService } from '../../../shared/services/user.service';
 
 @Component({
   selector: 'app-rent-form-dialog',

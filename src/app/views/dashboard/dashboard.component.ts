@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Rent } from 'src/app/shared/models/rent.model';
-import { RentService } from 'src/app/shared/services/rent-service.service';
+import { Rent } from '../../shared/models/rent.model';
+import { RentService } from '../../shared/services/rent-service.service';
 
 @Component({
   selector: 'app-dashboard',
